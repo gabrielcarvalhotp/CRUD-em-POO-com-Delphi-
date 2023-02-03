@@ -1,0 +1,9 @@
+object DMClientes: TDMClientes
+  OldCreateOrder = False
+  Height = 294
+  Width = 461
+  object FDQClientes: TFDQuery
+    Left = 24
+    Top = 16
+  end
+end

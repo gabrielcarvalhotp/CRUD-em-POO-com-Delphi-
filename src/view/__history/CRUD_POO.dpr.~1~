@@ -1,0 +1,14 @@
+program CRUD_POO;
+
+uses
+  Vcl.Forms,
+  CRUD.POO.Principal in 'CRUD.POO.Principal.pas' {FrmPrincipal};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFrmPrincipal, FrmPrincipal);
+  Application.Run;
+end.

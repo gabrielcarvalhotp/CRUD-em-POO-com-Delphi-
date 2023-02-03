@@ -1,0 +1,15 @@
+object DMConexao: TDMConexao
+  OldCreateOrder = False
+  OnCreate = DataModuleCreate
+  Height = 229
+  Width = 357
+  object FDConnection: TFDConnection
+    Params.Strings = (
+      'Database=C:\DB\DATABASETESTES.FDB'
+      'User_Name=SYSDBA'
+      'Password=masterkey'
+      'DriverID=FB')
+    Left = 32
+    Top = 16
+  end
+end

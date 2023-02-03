@@ -1,0 +1,33 @@
+object DMConexao: TDMConexao
+  OldCreateOrder = False
+  Height = 309
+  Width = 587
+  object FDConnection: TFDConnection
+    Params.Strings = (
+      'Database=C:\DB\DATABASETESTES.FDB'
+      'User_Name=SYSDBA'
+      'Password=masterkey'
+      'DriverID=FB')
+    Connected = True
+    LoginPrompt = False
+    Left = 40
+    Top = 24
+  end
+  object FDQClientes_Grid: TFDQuery
+    Connection = FDConnection
+    SQL.Strings = (
+      'select * from clientes')
+    Left = 128
+    Top = 24
+  end
+  object DSClientes_grid: TDataSource
+    DataSet = FDQClientes_Grid
+    Left = 224
+    Top = 24
+  end
+  object FDQClientes: TFDQuery
+    Connection = FDConnection
+    Left = 304
+    Top = 24
+  end
+end

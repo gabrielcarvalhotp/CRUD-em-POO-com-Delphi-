@@ -1,0 +1,25 @@
+﻿program CRUD_POO;
+
+uses
+  Vcl.Forms,
+  CRUD.POO.Principal in 'src\view\CRUD.POO.Principal.pas' {FrmPrincipal},
+  CRUD.View.CadastroPadrao in 'src\view\CRUD.View.CadastroPadrao.pas' {FrmCadPadrao},
+  CRUD.Model.ChamaCard in 'src\model\CRUD.Model.ChamaCard.pas',
+  CRUD.Controller.Interfaces in 'src\interfaces\CRUD.Controller.Interfaces.pas',
+  CRUD.View.Clientes in 'src\view\CRUD.View.Clientes.pas' {frmCadClientes},
+  CRUD.Entidadas.Clientes in 'src\model\Entidades\CRUD.Entidadas.Clientes.pas',
+  CRUD.DAO.Clientes in 'src\DAO\CRUD.DAO.Clientes.pas',
+  CRUD.model.Clientes in 'src\model\Conexao\CRUD.model.Clientes.pas' {DMClientes: TDataModule},
+  Unit3 in 'Unit3.pas' {DataModule3: TDataModule};
+
+{$R *.res}
+
+begin
+  ReportMemoryLeaksOnShutdown := true;
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFrmPrincipal, FrmPrincipal);
+  Application.CreateForm(TDMClientes, DMClientes);
+  Application.CreateForm(TDataModule3, DataModule3);
+  Application.Run;
+end.

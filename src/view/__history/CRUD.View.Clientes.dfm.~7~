@@ -1,0 +1,57 @@
+inherited frmCadClientes: TfrmCadClientes
+  Caption = 'frmCadClientes'
+  PixelsPerInch = 96
+  TextHeight = 19
+  inherited CardPanelPrincipal: TCardPanel
+    ActiveCard = CardCadastro
+    inherited CardCadastro: TCard
+      ExplicitLeft = 2
+    end
+    inherited CardPesquisa: TCard
+      inherited PanelGrid: TPanel
+        inherited DBGridPesquisa: TDBGrid
+          DataSource = DMConexao.DSClientes_grid
+          Columns = <
+            item
+              Alignment = taCenter
+              Expanded = False
+              FieldName = 'ID'
+              Title.Alignment = taCenter
+              Width = 100
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'NOME'
+              Width = 250
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'ENDERECO'
+              Width = 250
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'TELEFONE'
+              Width = 150
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'EMAIL'
+              Width = 250
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'DATA_CADASTRO'
+              Width = 100
+              Visible = True
+            end>
+        end
+      end
+    end
+  end
+end

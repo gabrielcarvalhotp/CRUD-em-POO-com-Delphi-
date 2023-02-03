@@ -1,0 +1,127 @@
+inherited frmCadClientes: TfrmCadClientes
+  Caption = 'frmCadClientes'
+  PixelsPerInch = 96
+  TextHeight = 19
+  inherited CardPanelPrincipal: TCardPanel
+    ActiveCard = CardCadastro
+    inherited CardCadastro: TCard
+      ExplicitLeft = 25
+      object Label1: TLabel [0]
+        Left = 22
+        Top = 72
+        Width = 46
+        Height = 19
+        Caption = 'Label1'
+      end
+      object Label2: TLabel [1]
+        Left = 22
+        Top = 105
+        Width = 46
+        Height = 19
+        Caption = 'Label1'
+      end
+      object Label3: TLabel [2]
+        Left = 22
+        Top = 138
+        Width = 46
+        Height = 19
+        Caption = 'Label1'
+      end
+      object Label4: TLabel [3]
+        Left = 22
+        Top = 171
+        Width = 46
+        Height = 19
+        Caption = 'Label1'
+      end
+      object Label5: TLabel [4]
+        Left = 22
+        Top = 204
+        Width = 46
+        Height = 19
+        Caption = 'Label1'
+      end
+      object Edit1: TEdit
+        Left = 86
+        Top = 69
+        Width = 121
+        Height = 27
+        TabOrder = 2
+      end
+      object Edit2: TEdit
+        Left = 86
+        Top = 102
+        Width = 121
+        Height = 27
+        TabOrder = 3
+      end
+      object Edit3: TEdit
+        Left = 86
+        Top = 135
+        Width = 121
+        Height = 27
+        TabOrder = 4
+      end
+      object Edit4: TEdit
+        Left = 86
+        Top = 168
+        Width = 121
+        Height = 27
+        TabOrder = 5
+      end
+      object Edit5: TEdit
+        Left = 86
+        Top = 201
+        Width = 121
+        Height = 27
+        TabOrder = 6
+      end
+    end
+    inherited CardPesquisa: TCard
+      inherited PanelGrid: TPanel
+        inherited DBGridPesquisa: TDBGrid
+          DataSource = DMConexao.DSClientes_grid
+          Columns = <
+            item
+              Alignment = taCenter
+              Expanded = False
+              FieldName = 'ID'
+              Title.Alignment = taCenter
+              Width = 100
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'NOME'
+              Width = 250
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'ENDERECO'
+              Width = 250
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'TELEFONE'
+              Width = 150
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'EMAIL'
+              Width = 250
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'DATA_CADASTRO'
+              Width = 100
+              Visible = True
+            end>
+        end
+      end
+    end
+  end
+end

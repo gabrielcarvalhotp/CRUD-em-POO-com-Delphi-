@@ -1,0 +1,18 @@
+unit CRUD.Entidadas.Clientes;
+
+interface
+
+type
+  TClientes = class
+  private
+
+  public
+    property id: integer read Fid write Fid;
+    property nome: string read Fnome write Fnome;
+    property
+
+    end;
+
+implementation
+
+end.

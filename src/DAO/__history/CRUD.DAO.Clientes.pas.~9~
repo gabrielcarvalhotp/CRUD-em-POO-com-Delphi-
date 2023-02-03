@@ -1,0 +1,44 @@
+﻿unit CRUD.DAO.Clientes;
+
+interface
+
+type
+  TCliente = class
+  private
+    Fcliente : TCliente;
+  public
+    constructor Create;
+    destructor Destroy; override;
+    procedure CreateCliente(aValue: TCliente);
+  end;
+
+implementation
+
+{ TCliente }
+
+constructor TCliente.Create;
+begin
+
+end;
+
+procedure TCliente.CreateCliente(aValue: TCliente);
+var
+  lSQL: string;
+  lCliente: TCliente;
+begin
+  lCliente := TCliente.Create;
+  try
+
+  finally
+    lCliente.DisposeOf;
+  end;
+
+end;
+
+destructor TCliente.Destroy;
+begin
+
+  inherited;
+end;
+
+end.

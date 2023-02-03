@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/08/24 09:03:05.000.178,=C:\Users\gabri\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/08/26 16:39:06.000.018,=C:\Users\gabri\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/08/29 14:44:10.000.049,=C:\Users\gabri\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/02/02 18:59:25.000.982,=C:\Users\gabri\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/02/02 19:00:30.000.895,C:\Users\gabri\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\gabri\Desktop\Delphi\DelphiProjetos\CRUD em POO\src\view\CRUD.POO.Principal.pas</Transaction>
+    <Transaction>2023/02/02 19:00:30.000.895,C:\Users\gabri\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\gabri\Desktop\Delphi\DelphiProjetos\CRUD em POO\src\view\CRUD.POO.Principal.dfm</Transaction>
+    <Transaction>2023/02/02 19:00:45.000.340,C:\Users\gabri\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\gabri\Desktop\Delphi\DelphiProjetos\CRUD em POO\src\view\CRUD_POO.dproj</Transaction>
+    <Transaction>2023/02/02 19:10:53.000.772,=C:\Users\gabri\Desktop\Delphi\DelphiProjetos\CRUD em POO\src\view\Financeiro.View.CadastroPadrao.pas</Transaction>
+    <Transaction>2023/02/02 19:11:12.000.674,=C:\Users\gabri\Desktop\Delphi\DelphiProjetos\CRUD em POO\src\view\Unit1.pas</Transaction>
+    <Transaction>2023/02/02 19:12:13.000.861,C:\Users\gabri\Desktop\Delphi\DelphiProjetos\CRUD em POO\src\view\Financeiro.View.CadastroPadrao.pas=</Transaction>
+    <Transaction>2023/02/02 19:13:04.000.310,=C:\Users\gabri\Desktop\Delphi\DelphiProjetos\CRUD em POO\src\view\CRUD.View.CadastroPadrao.pas</Transaction>
+    <Transaction>2023/02/02 19:14:49.000.681,=C:\Users\gabri\Desktop\Delphi\DelphiProjetos\CRUD em POO\src\interfaces\CRUD.Controller.Interfaces.pas</Transaction>
+    <Transaction>2023/02/02 19:17:26.000.041,=C:\Users\gabri\Desktop\Delphi\DelphiProjetos\CRUD em POO\src\model\CRUD.Model.ChamaCard.pas</Transaction>
+  </Transactions>
+</BorlandProject>

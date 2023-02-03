@@ -1,0 +1,16 @@
+object DMConexao: TDMConexao
+  OldCreateOrder = False
+  Height = 365
+  Width = 471
+  object FDConnection: TFDConnection
+    Params.Strings = (
+      'Database=C:\DB\DATABASETESTES.FDB'
+      'User_Name=SYSDBA'
+      'Password=masterkey'
+      'DriverID=FB')
+    Connected = True
+    LoginPrompt = False
+    Left = 216
+    Top = 160
+  end
+end

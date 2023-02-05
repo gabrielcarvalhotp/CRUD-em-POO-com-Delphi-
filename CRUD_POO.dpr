@@ -9,7 +9,9 @@ uses
   CRUD.View.Clientes in 'src\view\CRUD.View.Clientes.pas' {frmCadClientes},
   CRUD.Entidadas.Clientes in 'src\model\Entidades\CRUD.Entidadas.Clientes.pas',
   CRUD.model.Conexao in 'src\model\Conexao\CRUD.model.Conexao.pas' {DMConexao: TDataModule},
-  CRUD.DAO.Clientes in 'src\DAO\CRUD.DAO.Clientes.pas';
+  CRUD.DAO.Clientes in 'src\DAO\CRUD.DAO.Clientes.pas',
+  CRUD.model.Clientes in 'src\model\Conexao\CRUD.model.Clientes.pas' {DMClientes: TDataModule},
+  CRUD.Entidadas.Constantes in 'src\model\Entidades\CRUD.Entidadas.Constantes.pas';
 
 {$R *.res}
 

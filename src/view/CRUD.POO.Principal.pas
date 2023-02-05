@@ -31,7 +31,7 @@ uses
 
 procedure TFrmPrincipal.Cliente1Click(Sender: TObject);
 begin
-  frmCadClientes := TfrmCadClientes.Create(self);
+  frmCadClientes := TfrmCadClientes.Create(nil);
   try
     frmCadClientes.ShowModal;
   finally

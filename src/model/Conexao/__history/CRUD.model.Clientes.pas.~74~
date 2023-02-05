@@ -1,0 +1,83 @@
+unit CRUD.model.Clientes;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, CRUD.model.Conexao, FireDAC.Stan.Intf,
+  FireDAC.Stan.Option, FireDAC.Stan.Param,
+  FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
+  FireDAC.Stan.Async, FireDAC.DApt, Data.DB,
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client;
+
+type
+  TDMClientes = class(TDataModule)
+    FDQClientes: TFDQuery;
+    DSClientes_grid: TDataSource;
+    FDQClientes_Grid: TFDQuery;
+    FDQClientes_GridID: TIntegerField;
+    FDQClientes_GridNOME: TStringField;
+    FDQClientes_GridENDERECO: TStringField;
+    FDQClientes_GridTELEFONE: TStringField;
+    FDQClientes_GridEMAIL: TStringField;
+    FDQClientes_GridDATA_CADASTRO: TSQLTimeStampField;
+  private
+    { Private declarations }
+  public
+    procedure PrepareStatement(aSql: string);
+    procedure AddParaments(NomeParametro: string;
+      ValorParametro: string); overload;
+    procedure AddParaments(NomeParametro: string;
+      ValorParametro: Integer); overload;
+    procedure SetValue(aIndex: Integer; aValue: variant);
+    procedure ExecSQL;
+    procedure StartTransation;
+    procedure Rollback;
+  end;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+{$R *.dfm}
+{ TDMClientes }
+
+procedure TDMClientes.AddParaments(NomeParametro: string;
+  ValorParametro: string);
+begin
+  FDQClientes.ParamByName(NomeParametro).AsString := ValorParametro;
+end;
+
+procedure TDMClientes.AddParaments(NomeParametro: string;
+  ValorParametro: Integer);
+begin
+  FDQClientes.ParamByName(NomeParametro).asInteger := ValorParametro;
+end;
+
+procedure TDMClientes.ExecSQL;
+begin
+  FDQClientes_Grid.Execute;
+  FDQClientes.ExecSQL;
+end;
+
+procedure TDMClientes.PrepareStatement(aSql: string);
+begin
+  FDQClientes.SQL.Clear;
+  FDQClientes.SQL.Add(aSql);
+end;
+
+procedure TDMClientes.Rollback;
+begin
+  DMConexao.FDConnection.Rollback;
+end;
+
+procedure TDMClientes.SetValue(aIndex: Integer; aValue: variant);
+begin
+  FDQClientes.Params.Add;
+  FDQClientes.Params[aIndex].Value := aValue;
+end;
+
+procedure TDMClientes.StartTransation;
+begin
+  DMConexao.FDConnection.StartTransaction;
+end;
+
+end.

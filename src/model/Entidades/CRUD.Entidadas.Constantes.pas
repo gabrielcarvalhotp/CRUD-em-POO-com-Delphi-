@@ -1,0 +1,38 @@
+unit CRUD.Entidadas.Constantes;
+
+interface
+
+type
+  TConstantes = class
+  private
+  public
+    constructor create;
+    destructor destroy; override;
+
+  const
+    insert = 'dsInsert';
+
+  const
+    edit = 'dsEdit';
+
+  end;
+
+var
+  Contantes: TConstantes;
+
+implementation
+
+{ TConstantes }
+
+constructor TConstantes.create;
+begin
+
+end;
+
+destructor TConstantes.destroy;
+begin
+
+  inherited;
+end;
+
+end.

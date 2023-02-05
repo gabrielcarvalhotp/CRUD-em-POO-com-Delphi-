@@ -1,0 +1,93 @@
+unit CRUD.DAO.Clientes;
+
+interface
+
+uses
+  CRUD.Entidadas.Clientes, CRUD.model.Clientes;
+
+type
+  TDAOCliente = class
+  private
+    FDMcliente: TDMClientes;
+  public
+    constructor Create;
+    destructor Destroy; override;
+    procedure CreateCliente(aValue: TClientes);
+    procedure EditCliente(aValue: TClientes);
+    procedure DeleteCliente(aValue: TClientes);
+  end;
+
+implementation
+
+uses
+  System.SysUtils, Vcl.Dialogs;
+
+{ TCliente }
+
+constructor TDAOCliente.Create;
+begin
+  FDMcliente := TDMClientes.Create(nil)
+end;
+
+procedure TDAOCliente.CreateCliente(aValue: TClientes);
+var
+  lSQL: string;
+begin
+  try
+    lSQL := ' insert into CLIENTES values (?,?,?,?,?,?)';
+    FDMcliente.PrepareStatement(lSQL);
+    FDMcliente.SetValue(1, aValue.nome);
+    FDMcliente.SetValue(2, aValue.endereco);
+    FDMcliente.SetValue(3, aValue.telefone);
+    FDMcliente.SetValue(4, aValue.email);
+    FDMcliente.SetValue(5, aValue.data_cadastro);
+    FDMcliente.ExecSQL;
+  except
+    raise Exception.Create('Não foi possivel concluir a operação');
+  end;
+end;
+
+procedure TDAOCliente.EditCliente(aValue: TClientes);
+var
+  lSQL: string;
+begin
+  try
+    lSQL := ' update CLIENTES ' + 
+            ' set CLIENTES.nome = :pNome, ' +
+            ' CLIENTES.endereco = :pEndereco, ' + 
+            ' CLIENTES.telefone = :pTelefone, ' +
+            ' CLIENTES.email = :pEmail, ' + 
+            ' CLIENTES.data_cadastro = :pDataCadastro ' +
+            ' where CLIENTES.id = :pId';
+
+    FDMcliente.PrepareStatement(lSQL);
+    FDMcliente.AddParaments('pNome',aValue.nome);
+    FDMcliente.AddParaments('pEndereco',aValue.Endereco);
+    FDMcliente.AddParaments('pTelefone',aValue.Telefone);
+    FDMcliente.AddParaments('pEmail',aValue.Email);
+    FDMcliente.AddParaments('pDataCadastro',aValue.data_cadastro);
+    FDMcliente.AddParaments('pid',aValue.id);
+    FDMcliente.ExecSQL;
+     
+  except
+    raise Exception.Create('Não foi possivel concluir a operação');
+  end;
+end;
+
+procedure TDAOCliente.DeleteCliente(aValue: integer);
+var
+  lSQL: string;
+begin
+  lSql := ' delete CLIENTES where CLIENTES.ID = :pId ';
+  FDMcliente.PrepareStatement(lSQL);
+  FDMcliente.AddParaments('pid', aValue.id);  
+  FDMcliente.ExecSQL;
+end;
+
+destructor TDAOCliente.Destroy;
+begin
+  FDMcliente.DisposeOf;
+  inherited;
+end;
+
+end.

@@ -1,9 +1,0 @@
-object DataModule3: TDataModule3
-  OldCreateOrder = False
-  Height = 294
-  Width = 461
-  object FDQClientes: TFDQuery
-    Left = 80
-    Top = 64
-  end
-end

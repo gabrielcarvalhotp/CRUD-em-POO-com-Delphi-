@@ -1,12 +1,10 @@
 inherited frmCadClientes: TfrmCadClientes
   Caption = 'frmCadClientes'
-  ExplicitTop = -122
+  OnClose = FormClose
   PixelsPerInch = 96
   TextHeight = 19
   inherited CardPanelPrincipal: TCardPanel
-    ActiveCard = CardCadastro
     inherited CardCadastro: TCard
-      ExplicitLeft = 25
       object Label1: TLabel [0]
         Left = 22
         Top = 72
@@ -50,43 +48,48 @@ inherited frmCadClientes: TfrmCadClientes
       object edNome: TEdit
         Left = 93
         Top = 69
-        Width = 121
+        Width = 188
         Height = 27
         TabOrder = 2
       end
       object edEndereco: TEdit
         Left = 93
         Top = 102
-        Width = 121
+        Width = 188
         Height = 27
         TabOrder = 3
       end
       object edTelefone: TEdit
         Left = 93
         Top = 135
-        Width = 121
+        Width = 188
         Height = 27
         TabOrder = 4
       end
       object edEmail: TEdit
         Left = 93
         Top = 168
-        Width = 121
+        Width = 188
         Height = 27
         TabOrder = 5
       end
       object edDataCadastro: TEdit
         Left = 120
         Top = 201
-        Width = 121
+        Width = 161
         Height = 27
         TabOrder = 6
       end
     end
     inherited CardPesquisa: TCard
+      inherited PanelFooter: TPanel
+        inherited BitBtnExcluirPesquisa: TBitBtn
+          OnClick = BitBtnExcluirPesquisaClick
+        end
+      end
       inherited PanelGrid: TPanel
         inherited DBGridPesquisa: TDBGrid
-          DataSource = DMConexao.DSClientes_grid
+          DataSource = DMClientes.DSClientes_grid
           Columns = <
             item
               Alignment = taCenter

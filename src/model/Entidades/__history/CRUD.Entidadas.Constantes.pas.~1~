@@ -1,0 +1,14 @@
+unit CRUD.Entidadas.Constantes;
+
+interface
+type
+TConstantes = class
+  private
+  public
+  const insert = 'dsInsert';
+  const edit = 'dsEdit';
+end;
+
+implementation
+
+end.

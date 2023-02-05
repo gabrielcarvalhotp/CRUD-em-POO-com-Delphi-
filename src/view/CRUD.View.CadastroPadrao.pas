@@ -90,7 +90,6 @@ end;
 procedure TFrmCadPadrao.BitBtnFecharPesquisaClick(Sender: TObject);
 begin
   Close;
-  self.Free;
 end;
 
 procedure TFrmCadPadrao.FormShow(Sender: TObject);

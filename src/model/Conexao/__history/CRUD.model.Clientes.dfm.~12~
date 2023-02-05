@@ -1,0 +1,54 @@
+object DMClientes: TDMClientes
+  OldCreateOrder = False
+  Height = 242
+  Width = 310
+  object FDQClientes: TFDQuery
+    Connection = DMConexao.FDConnection
+    Left = 24
+    Top = 16
+  end
+  object DSClientes_grid: TDataSource
+    DataSet = FDQClientes_Grid
+    Left = 24
+    Top = 80
+  end
+  object FDQClientes_Grid: TFDQuery
+    Connection = DMConexao.FDConnection
+    SQL.Strings = (
+      'select * from clientes')
+    Left = 104
+    Top = 16
+    object FDQClientes_GridID: TIntegerField
+      FieldName = 'ID'
+      Origin = 'ID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object FDQClientes_GridNOME: TStringField
+      FieldName = 'NOME'
+      Origin = 'NOME'
+      Required = True
+      Size = 100
+    end
+    object FDQClientes_GridENDERECO: TStringField
+      FieldName = 'ENDERECO'
+      Origin = 'ENDERECO'
+      Size = 200
+    end
+    object FDQClientes_GridTELEFONE: TStringField
+      FieldName = 'TELEFONE'
+      Origin = 'TELEFONE'
+      Size = 15
+    end
+    object FDQClientes_GridEMAIL: TStringField
+      FieldName = 'EMAIL'
+      Origin = 'EMAIL'
+      Size = 100
+    end
+    object FDQClientes_GridDATA_CADASTRO: TSQLTimeStampField
+      FieldName = 'DATA_CADASTRO'
+      Origin = 'DATA_CADASTRO'
+      Required = True
+    end
+  end
+end

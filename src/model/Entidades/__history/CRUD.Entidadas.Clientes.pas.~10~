@@ -1,0 +1,41 @@
+unit CRUD.Entidadas.Clientes;
+
+interface
+
+type
+  TClientes = class
+  private
+    Femail: string;
+    Fdata_cadastro: string;
+    Fid: integer;
+    Fnome: string;
+    Fendereco: string;
+    Ftelefone: string;
+  public
+    constructor Create;
+    destructor Destroy;override;
+    property id: integer read Fid write Fid;
+    property nome: string read Fnome write Fnome;
+    property endereco: string read Fendereco write Fendereco;
+    property telefone: string read Ftelefone write Ftelefone;
+    property email: string read Femail write Femail;
+    property data_cadastro : TdateTime read Fdata_cadastro write Fdata_cadastro;
+    end;
+
+implementation
+
+
+{ TClientes }
+
+constructor TClientes.Create;
+begin
+
+end;
+
+destructor TClientes.Destroy;
+begin
+
+  inherited;
+end;
+
+end.

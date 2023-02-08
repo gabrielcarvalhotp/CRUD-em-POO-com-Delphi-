@@ -26,6 +26,7 @@ type
     procedure PrepareStatement(aSql: string);
     procedure AddParaments(NomeParametro: string; ValorParametro: string); overload;
     procedure AddParaments(NomeParametro: string; ValorParametro: Integer); overload;
+    procedure AddParaments(NomeParametro: string; ValorParametro: TDateTime); overload;
     procedure SetValue(aIndex: Integer; aValue: variant);
     procedure ExecSQL;
     procedure StartTransation;
@@ -48,6 +49,11 @@ procedure TDMClientes.AddParaments(NomeParametro: string;
   ValorParametro: Integer);
 begin
   FDQClientes.ParamByName(NomeParametro).asInteger := ValorParametro;
+end;
+
+procedure TDMClientes.AddParaments(NomeParametro: string; ValorParametro: TDateTime);
+begin
+  FDQClientes.ParamByName(NomeParametro).AsDateTime := ValorParametro;
 end;
 
 procedure TDMClientes.ExecSQL;

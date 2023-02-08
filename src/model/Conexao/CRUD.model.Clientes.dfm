@@ -13,7 +13,6 @@ object DMClientes: TDMClientes
     Top = 72
   end
   object FDQClientes_Grid: TFDQuery
-    Active = True
     Connection = DMConexao.FDConnection
     SQL.Strings = (
       'select * from clientes')

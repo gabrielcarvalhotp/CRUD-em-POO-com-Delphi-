@@ -6,7 +6,7 @@ type
   TClientes = class
   private
     Femail: string;
-    Fdata_cadastro: string;
+    Fdata_cadastro: TdateTime;
     Fid: integer;
     Fnome: string;
     Fendereco: string;
@@ -19,10 +19,11 @@ type
     property endereco: string read Fendereco write Fendereco;
     property telefone: string read Ftelefone write Ftelefone;
     property email: string read Femail write Femail;
-    property data_cadastro : string read Fdata_cadastro write Fdata_cadastro;
+    property data_cadastro : TdateTime read Fdata_cadastro write Fdata_cadastro;
     end;
 
 implementation
+
 
 { TClientes }
 

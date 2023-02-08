@@ -41,7 +41,7 @@ type
 implementation
 
 uses
-  CRUD.Entidadas.Constantes, CRUD.Model.Clear;
+  CRUD.Entidadas.Constantes, CRUD.model.Clear;
 
 {$R *.dfm}
 
@@ -62,7 +62,8 @@ var
   lDAOCliente: TDAOCliente;
 begin
   inherited;
-  if MessageDlg('Deseja Deletar?', mtConfirmation, [mbYes, mbNo], 0) = mrYes then
+  if MessageDlg('Deseja Deletar?', mtConfirmation, [mbYes, mbNo], 0) = mrYes
+  then
   begin
     lDAOCliente := TDAOCliente.Create;
     try
@@ -93,16 +94,16 @@ var
   lDAOCliente: TDAOCliente;
 begin
   inherited;
-  lCliente := TClientes.Create;
-  lDAOCliente := TDAOCliente.Create;
   if MessageDlg('Deseja Salvar?', mtConfirmation, [mbYes, mbNo], 0) = mrYes then
   begin
+    lCliente := TClientes.Create;
+    lDAOCliente := TDAOCliente.Create;
     try
       lCliente.nome := edNome.Text;
       lCliente.endereco := edEndereco.Text;
       lCliente.telefone := edTelefone.Text;
       lCliente.email := edEmail.Text;
-      lCliente.data_cadastro := edDataCadastro.Text;
+      lCliente.data_cadastro := now;
 
       if FStatus = TStatus.insert then
         lDAOCliente.CreateCliente(lCliente)
@@ -111,7 +112,7 @@ begin
         lCliente.id := lDMClientes.FDQClientes_GridID.value;
         lDAOCliente.EditCliente(lCliente)
       end;
-      
+
     finally
       lCliente.DisposeOf;
       lDAOCliente.DisposeOf;
@@ -130,7 +131,7 @@ begin
               .ClearEdit(edEndereco)
                .ClearEdit(edTelefone)
                 .ClearEdit(edEmail)
-                 .ClearEdit(edDataCadastro) 
+                 .ClearEdit(edDataCadastro)
 end;
 
 procedure TfrmCadClientes.FormClose(Sender: TObject; var Action: TCloseAction);

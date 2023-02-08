@@ -1,0 +1,9 @@
+object DMOrcamentos: TDMOrcamentos
+  OldCreateOrder = False
+  Height = 380
+  Width = 471
+  object FDQOrcamento_grid: TFDQuery
+    Left = 24
+    Top = 24
+  end
+end

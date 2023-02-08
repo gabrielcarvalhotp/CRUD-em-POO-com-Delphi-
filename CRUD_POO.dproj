@@ -108,8 +108,6 @@
             <Form>FrmCadPadrao</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="src\model\CRUD.Model.ChamaCard.pas"/>
-        <DCCReference Include="src\interfaces\CRUD.Controller.Interfaces.pas"/>
         <DCCReference Include="src\view\CRUD.View.Clientes.pas">
             <Form>frmCadClientes</Form>
             <FormType>dfm</FormType>
@@ -127,6 +125,23 @@
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <DCCReference Include="src\model\Entidades\CRUD.Entidadas.Constantes.pas"/>
+        <DCCReference Include="src\view\CRUD.View.Produtos.pas">
+            <Form>FrmCadProduto</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="src\model\Conexao\CRUD.model.Orcamento.pas">
+            <Form>DMOrcamentos</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="src\model\Entidades\CRUD.Entidadas.Produtos.pas"/>
+        <DCCReference Include="src\model\Conexao\CRUD.model.Produtos.pas">
+            <Form>DMProdutos</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="src\DAO\CRUD.DAO.produto.pas"/>
+        <DCCReference Include="src\model\CRUD.Model.Clear.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

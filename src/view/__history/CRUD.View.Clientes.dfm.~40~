@@ -1,0 +1,138 @@
+inherited frmCadClientes: TfrmCadClientes
+  Caption = 'frmCadClientes'
+  OnClose = FormClose
+  PixelsPerInch = 96
+  TextHeight = 19
+  inherited CardPanelPrincipal: TCardPanel
+    ActiveCard = CardCadastro
+    inherited CardCadastro: TCard
+      ExplicitLeft = 2
+      object Label1: TLabel [0]
+        Left = 22
+        Top = 72
+        Width = 42
+        Height = 19
+        Caption = 'Nome'
+      end
+      object Label2: TLabel [1]
+        Left = 22
+        Top = 105
+        Width = 65
+        Height = 19
+        Caption = 'Endere'#231'o'
+      end
+      object Label3: TLabel [2]
+        Left = 22
+        Top = 138
+        Width = 61
+        Height = 19
+        Caption = 'Telefone'
+      end
+      object Label4: TLabel [3]
+        Left = 22
+        Top = 171
+        Width = 38
+        Height = 19
+        Caption = 'email'
+      end
+      object Label5: TLabel [4]
+        Left = 22
+        Top = 204
+        Width = 92
+        Height = 19
+        Caption = 'dataCadastro'
+      end
+      inherited Panel1: TPanel
+        inherited BitBtnSalvarCadastro: TBitBtn
+          OnClick = BitBtnSalvarCadastroClick
+        end
+      end
+      object edNome: TEdit
+        Left = 93
+        Top = 69
+        Width = 188
+        Height = 27
+        TabOrder = 2
+      end
+      object edEndereco: TEdit
+        Left = 93
+        Top = 102
+        Width = 188
+        Height = 27
+        TabOrder = 3
+      end
+      object edTelefone: TEdit
+        Left = 93
+        Top = 135
+        Width = 188
+        Height = 27
+        TabOrder = 4
+      end
+      object edEmail: TEdit
+        Left = 93
+        Top = 168
+        Width = 188
+        Height = 27
+        TabOrder = 5
+      end
+      object edDataCadastro: TEdit
+        Left = 120
+        Top = 201
+        Width = 161
+        Height = 27
+        TabOrder = 6
+      end
+    end
+    inherited CardPesquisa: TCard
+      inherited PanelFooter: TPanel
+        inherited BitBtnExcluirPesquisa: TBitBtn
+          OnClick = BitBtnExcluirPesquisaClick
+        end
+      end
+      inherited PanelGrid: TPanel
+        inherited DBGridPesquisa: TDBGrid
+          DataSource = DMClientes.DSClientes_grid
+          Columns = <
+            item
+              Alignment = taCenter
+              Expanded = False
+              FieldName = 'ID'
+              Title.Alignment = taCenter
+              Width = 100
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'NOME'
+              Width = 250
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'ENDERECO'
+              Width = 250
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'TELEFONE'
+              Width = 150
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'EMAIL'
+              Width = 250
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'DATA_CADASTRO'
+              Width = 100
+              Visible = True
+            end>
+        end
+      end
+    end
+  end
+end

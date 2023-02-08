@@ -1,0 +1,28 @@
+unit CRUD.Entidadas.Produtos;
+
+interface
+
+type
+  TOrcamento_detalhe = class
+  private
+  public
+    constructor create;
+    destructor destroy; override;
+  end;
+
+implementation
+
+{ TOrcamento_detalhe }
+
+constructor TOrcamento_detalhe.create;
+begin
+
+end;
+
+destructor TOrcamento_detalhe.destroy;
+begin
+
+  inherited;
+end;
+
+end.

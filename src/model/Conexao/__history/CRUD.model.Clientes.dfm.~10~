@@ -1,5 +1,0 @@
-object DMClientes: TDMClientes
-  OldCreateOrder = False
-  Height = 242
-  Width = 310
-end

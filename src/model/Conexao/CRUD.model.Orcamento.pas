@@ -1,0 +1,70 @@
+unit CRUD.model.Orcamento;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error,
+  FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, Data.DB, FireDAC.Comp.DataSet,
+  FireDAC.Comp.Client, CRUD.model.Conexao;
+
+type
+  TDMOrcamentos = class(TDataModule)
+    FDQOrcamento_grid: TFDQuery;
+    DSOrcamento_grid: TDataSource;
+    FDQOrcamentos: TFDQuery;
+  private
+    { Private declarations }
+  public
+    procedure PrepareStatement(aSql: string);
+    procedure AddParaments(NomeParametro: string; ValorParametro: string); overload;
+    procedure AddParaments(NomeParametro: string; ValorParametro: Integer); overload;
+    procedure SetValue(aIndex: Integer; aValue: variant);
+    procedure ExecSQL;
+    procedure StartTransation;
+    procedure Rollback;
+  end;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+{ TDMOrcamentos }
+
+procedure TDMOrcamentos.AddParaments(NomeParametro, ValorParametro: string);
+begin
+
+end;
+
+procedure TDMOrcamentos.AddParaments(NomeParametro: string; ValorParametro: Integer);
+begin
+
+end;
+
+procedure TDMOrcamentos.ExecSQL;
+begin
+
+end;
+
+procedure TDMOrcamentos.PrepareStatement(aSql: string);
+begin
+
+end;
+
+procedure TDMOrcamentos.Rollback;
+begin
+
+end;
+
+procedure TDMOrcamentos.SetValue(aIndex: Integer; aValue: variant);
+begin
+
+end;
+
+procedure TDMOrcamentos.StartTransation;
+begin
+
+end;
+
+end.

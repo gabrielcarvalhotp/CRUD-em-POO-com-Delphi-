@@ -1,0 +1,33 @@
+unit CRUD.Model.ClearEdit;
+
+interface
+
+uses
+  Vcl.StdCtrls;
+
+type
+
+  iClearEdit = interface
+    ['{C8A3FE83-71A2-4956-919F-502B66FA281B}']
+    function ClearEdit(avalue: TEdit): iClearEdit;
+  end;
+
+  TClearEdit = class(TInterfacedObject, iClearEdit)
+  private
+  public
+    constructor Create;
+    destructor Destroy; override;
+
+    function ClearEdit(avalue: TEdit): iClearEdit;
+  end;
+
+implementation
+
+{ TClearEdit }
+
+function TClearEdit.ClearEdit(avalue: TEdit): iClearEdit;
+begin
+  avalue.Text := '';
+end;
+
+end.

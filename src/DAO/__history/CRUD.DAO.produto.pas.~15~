@@ -1,0 +1,55 @@
+﻿unit CRUD.DAO.produto;
+
+interface
+
+uses
+  CRUD.model.Produtos, CRUD.Entidadas.Produtos;
+
+type
+  TDAOProdutos = class
+  private
+    DMProduto: TDMProdutos;
+  public
+    constructor Create;
+    destructor destroy; override;
+    procedure createProduto(aValue: TProdutos);
+    procedure EditProduto(aP
+  end;
+
+implementation
+
+uses
+  FireDAC.Comp.Client;
+
+{ TDAOProduto }
+
+constructor TDAOProdutos.Create;
+begin
+  DMProduto := TDMProdutos.Create(nil);
+end;
+
+procedure TDAOProdutos.createProduto(aValue: TProdutos);
+var
+  lsql: string;
+begin
+  try
+    lsql := ' insert into produtos values (?,?,?,?,?) ';
+    DMProduto.PreparementsStatement(lsql);
+    DMProduto.setValue(1, aProduto.nome);
+    DMProduto.setValue(2, aProduto.preco);
+    DMProduto.setValue(3, aProduto.data_cadastro);
+    DMProduto.setValue(4, aProduto.descricao);
+    DMProduto.execSQL;
+  except
+    DMProduto.Rollback;
+  end;
+
+end;
+
+destructor TDAOProdutos.destroy;
+begin
+  DMProduto.DisposeOf;
+  inherited;
+end;
+
+end.

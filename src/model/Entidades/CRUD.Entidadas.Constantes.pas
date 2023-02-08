@@ -3,7 +3,7 @@ unit CRUD.Entidadas.Constantes;
 interface
 
 type
-  TConstantes = class
+  TStatus = class
   private
   public
     constructor create;
@@ -18,18 +18,18 @@ type
   end;
 
 var
-  Contantes: TConstantes;
+  Contantes: TStatus;
 
 implementation
 
 { TConstantes }
 
-constructor TConstantes.create;
+constructor TStatus.create;
 begin
 
 end;
 
-destructor TConstantes.destroy;
+destructor TStatus.destroy;
 begin
 
   inherited;

@@ -1,0 +1,28 @@
+unit CRUD.Entidadas.Produtos;
+
+interface
+
+type
+  TProdutos = class
+  private
+  public
+    constructor create;
+    destructor destroy; override;
+  end;
+
+implementation
+
+{ TOrcamento_detalhe }
+
+constructor TProdutos.create;
+begin
+
+end;
+
+destructor TProdutos.destroy;
+begin
+
+  inherited;
+end;
+
+end.

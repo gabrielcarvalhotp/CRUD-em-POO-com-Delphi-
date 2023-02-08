@@ -1,0 +1,17 @@
+object DMOrcamentos: TDMOrcamentos
+  OldCreateOrder = False
+  Height = 380
+  Width = 471
+  object FDQOrcamento_grid: TFDQuery
+    Connection = DMConexao.FDConnection
+    SQL.Strings = (
+      'select * from orcamentos')
+    Left = 40
+    Top = 16
+  end
+  object DSOrcamento_grid: TDataSource
+    DataSet = FDQOrcamento_grid
+    Left = 40
+    Top = 72
+  end
+end

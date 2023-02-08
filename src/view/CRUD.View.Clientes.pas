@@ -119,9 +119,10 @@ begin
     end;
 
     lDMClientes.FDQClientes_Grid.Refresh;
+    BitBtnFecharCadastroClick(self);
   end;
 
-  BitBtnFecharCadastroClick(self);
+  
 end;
 
 procedure TfrmCadClientes.ClearEdit;

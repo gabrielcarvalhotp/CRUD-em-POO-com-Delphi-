@@ -24,7 +24,6 @@ type
     procedure BitBtnAlterarPesquisaClick(Sender: TObject);
     procedure BitBtnIncluirPesquisaClick(Sender: TObject);
     procedure BitBtnSalvarCadastroClick(Sender: TObject);
-    procedure BitBtnFecharCadastroClick(Sender: TObject);
     procedure BitBtnExcluirPesquisaClick(Sender: TObject);
   private
     FStatus: string;
@@ -37,14 +36,15 @@ type
 
 implementation
 
-uses CRUD.Entidadas.Produtos, CRUD.DAO.produto, CRUD.Entidadas.Constantes;
+uses CRUD.Entidadas.Produtos, CRUD.DAO.produto, CRUD.Entidadas.Constantes,
+  CRUD.model.Clear;
 {$R *.dfm}
 
 procedure TFrmCadProduto.BitBtnAlterarPesquisaClick(Sender: TObject);
 begin
   inherited;
   CompleteEdit;
-  FStatus := TConstantes.edit;
+  FStatus := TStatus.edit;
 end;
 
 procedure TFrmCadProduto.BitBtnExcluirPesquisaClick(Sender: TObject);
@@ -64,17 +64,11 @@ begin
   dmProdutos.FDQProdutos_grid.Refresh;
 end;
 
-procedure TFrmCadProduto.BitBtnFecharCadastroClick(Sender: TObject);
-begin
-  inherited;
-  dmProdutos.FDQProdutos_grid.Refresh;
-end;
-
 procedure TFrmCadProduto.BitBtnIncluirPesquisaClick(Sender: TObject);
 begin
   inherited;
   ClearEdit;
-  FStatus := TConstantes.insert;
+  FStatus := TStatus.insert;
 end;
 
 procedure TFrmCadProduto.BitBtnSalvarCadastroClick(Sender: TObject);
@@ -83,19 +77,19 @@ var
   lDAOProdutos: TDAOProdutos;
 begin
   inherited;
-  lProduto := TProdutos.Create;
-  lDAOProdutos := TDAOProdutos.Create;
   if MessageDlg('Deseja Salvar?', mtConfirmation, [mbYes, mbNo], 0) = mrYes then
   begin
+    lProduto := TProdutos.Create;
+    lDAOProdutos := TDAOProdutos.Create;
     try
       lProduto.nome := EdNome.Text;
       lProduto.preco := StrToFloat(edPreco.Text);
       lProduto.descricao := MemoDescricao.Text;
       lProduto.data_cadastro := now;
 
-      if FStatus = TConstantes.insert then
+      if FStatus = TStatus.insert then
         lDAOProdutos.createProduto(lProduto)
-      else if FStatus = TConstantes.edit then
+      else if FStatus = TStatus.edit then
       begin
         lProduto.id := dmProdutos.FDQProdutos_gridID.Value;
         lDAOProdutos.EditProduto(lProduto);
@@ -105,6 +99,7 @@ begin
       lProduto.DisposeOf;
       lDAOProdutos.DisposeOf;
     end;
+    dmProdutos.FDQProdutos_grid.Refresh;
   end;
 
   BitBtnFecharCadastroClick(self);
@@ -112,10 +107,10 @@ end;
 
 procedure TFrmCadProduto.ClearEdit;
 begin
-  edID.Text := '';
-  EdNome.Text := '';
-  edPreco.Text := '';
-  MemoDescricao.Lines.Text := '';
+  TClearEdit.New
+             .ClearEdit(EdNome)
+              .ClearEdit(edPreco)
+               .ClearMemo(MemoDescricao)
 end;
 
 procedure TFrmCadProduto.CompleteEdit;
@@ -124,7 +119,7 @@ begin
   EdNome.Text := dmProdutos.FDQProdutos_gridNOME.Text;
   edPreco.Text := dmProdutos.FDQProdutos_gridPRECO.Text;
   MemoDescricao.Lines.Text := dmProdutos.FDQProdutos_gridDESCRICAO.Text;
-  FStatus := TConstantes.edit;
+  FStatus := TStatus.edit;
 end;
 
 procedure TFrmCadProduto.FormCreate(Sender: TObject);

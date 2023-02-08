@@ -77,10 +77,10 @@ var
   lDAOProdutos: TDAOProdutos;
 begin
   inherited;
-  lProduto := TProdutos.Create;
-  lDAOProdutos := TDAOProdutos.Create;
   if MessageDlg('Deseja Salvar?', mtConfirmation, [mbYes, mbNo], 0) = mrYes then
   begin
+    lProduto := TProdutos.Create;
+    lDAOProdutos := TDAOProdutos.Create;
     try
       lProduto.nome := EdNome.Text;
       lProduto.preco := StrToFloat(edPreco.Text);
@@ -100,9 +100,9 @@ begin
       lDAOProdutos.DisposeOf;
     end;
     dmProdutos.FDQProdutos_grid.Refresh;
+    BitBtnFecharCadastroClick(self);
   end;
-
-  BitBtnFecharCadastroClick(self);
+  
 end;
 
 procedure TFrmCadProduto.ClearEdit;
